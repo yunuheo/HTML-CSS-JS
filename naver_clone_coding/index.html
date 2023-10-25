@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/favicon.ico" />
+    <title>네이버</title>
+    <style>
+      :root[data-dark='true'] {
+        --color_title: #fff;
+        --color_title_rgb: 255, 255, 255;
+        --color_body: #f3f3f3;
+        --color_body_rgb: 243, 243, 243;
+        --color_caption1: #cbcbcb;
+        --color_caption1_rgb: 203, 203, 203;
+        --color_caption2: #b5b5b5;
+        --color_caption2_rgb: 181, 181, 181;
+        --color_search: #fff;
+        --color_search_rgb: 255, 255, 255;
+        --color_border_out: #383c3c;
+        --color_border_out_rgb: 56, 60, 60;
+        --color_border_in: #313334;
+        --color_border_in_rgb: 49, 51, 52;
+        --color_border_in_divider: #3c3e3e;
+        --color_border_in_divider_rgb: 60, 62, 62;
+        --color_border_in_exception: #454749;
+        --color_border_in_exception_rgb: 69, 71, 73;
+        --color_button_border: #515254;
+        --color_button_border_rgb: 81, 82, 84;
+        --color_dot_divider: #747474;
+        --color_dot_divider_rgb: 116, 116, 116;
+        --color_block_bg: #272829;
+        --color_block_bg_rgb: 39, 40, 41;
+        --color_board_bg: #292a2c;
+        --color_board_bg_rgb: 41, 42, 44;
+        --color_option_bg: #313233;
+        --color_option_bg_rgb: 49, 50, 51;
+        --color_login_bg: #2d2e2f;
+        --color_login_bg_rgb: 45, 46, 47;
+        --color_menu_widget_bg: #353637;
+        --color_menu_widget_bg_rgb: 53, 54, 55;
+        --color_setting_bg: #2b2c2d;
+        --color_setting_bg_rgb: 43, 44, 45;
+        --color_button1_bg: #343638;
+        --color_button1_bg_rgb: 52, 54, 56;
+        --color_button2_bg: #454749;
+        --color_button2_bg_rgb: 69, 71, 73;
+        --color_news: #7e9fff;
+        --color_news_rgb: 126, 159, 255;
+        --color_news_econ_stay: #a2acbc;
+        --color_news_econ_stay_rgb: 162, 172, 188;
+        --color_news_econ_down: #899bee;
+        --color_news_econ_down_rgb: 137, 155, 238;
+        --color_live_news_price: #ff6956;
+        --color_live_news_price_rgb: 255, 105, 86;
+        --color_enter: #eb48e8;
+        --color_enter_rgb: 235, 72, 232;
+        --color_enter_bg: #33323a;
+        --color_enter_bg_rgb: 51, 50, 58;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #wrap {
+        text-align: center;
+      }
+      #wrap-center {
+        width: 1280px;
+        display: inline-block;
+        /* background-color: yellow; */
+      }
+      #header {
+        text-align: left;
+        position: relative;
+        height: 64px;
+      }
+      /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+      #header-hamburger {
+        /* margin-top: 18px; */
+        position: absolute;
+        padding: 10px;
+        display: inline-block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        top: 18px;
+        left: -10px;
+      }
+      #header-hamburger:hover::before {
+        position: absolute;
+        content: '';
+        z-index: 0;
+        left: 1px;
+        top: 1px;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background-color: #e7eced;
+      }
+
+      #header-hamburger > div {
+        background-image: url(./assets/sp_main.png);
+        width: 26px;
+        height: 26px;
+        z-index: 1;
+        position: relative;
+        background-size: 434px 414px;
+        background-position: -82px -328px;
+      }
+      /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+      /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+      #header-talk {
+        /* margin-top: 18px; */
+        position: absolute;
+        padding: 10px;
+        display: inline-block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        top: 18px;
+        right: 40px;
+      }
+      #header-talk:hover::before {
+        position: absolute;
+        content: '';
+        z-index: 0;
+        left: 1px;
+        top: 1px;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background-color: #e7eced;
+      }
+
+      #header-talk > div {
+        background-image: url(./assets/sp_main.png);
+        width: 26px;
+        height: 26px;
+        z-index: 1;
+        position: relative;
+        background-size: 434px 414px;
+        background-position: -190px -329px;
+      }
+      /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+      #header-notice {
+        /* margin-top: 18px; */
+        position: absolute;
+        padding: 10px;
+        display: inline-block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        top: 18px;
+        right: -10px;
+      }
+      #header-notice:hover::before {
+        position: absolute;
+        content: '';
+        z-index: 0;
+        left: 1px;
+        top: 1px;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background-color: #e7eced;
+      }
+
+      #header-notice > div {
+        background-image: url(./assets/sp_main.png);
+        width: 26px;
+        height: 26px;
+        z-index: 1;
+        position: relative;
+        background-size: 434px 414px;
+        background-position: -136px -329px;
+      }
+      /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+      #header-naverpay {
+        /* margin-top: 18px; */
+        position: absolute;
+        padding: 10px;
+        display: inline-block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        top: 18px;
+        left: 43px;
+      }
+      #header-naverpay:hover::before {
+        position: absolute;
+        content: '';
+        z-index: 0;
+        left: 1px;
+        top: 1px;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background-color: #e7eced;
+      }
+
+      #header-naverpay > div {
+        background-image: url(./assets/sp_main.png);
+        width: 32px;
+        height: 32px;
+        z-index: 1;
+        position: relative;
+        background-size: 434px 414px;
+        background-position: -295px -177px;
+      }
+      /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+      #main {
+        height: 2000px;
+      }
+      .blind {
+        position: absolute;
+        clip: rect(0 0 0 0);
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="wrap-center">
+        <div id="header">
+          <button id="header-hamburger">
+            <div></div>
+            <span class="blind">확장 영역</span>
+          </button>
+          <button id="header-naverpay">
+            <div></div>
+            <span class="blind">네이버 페이</span>
+          </button>
+          <button id="header-talk">
+            <div></div>
+            <span class="blind">알림</span>
+          </button>
+          <button id="header-notice">
+            <div></div>
+            <span class="blind">알림</span>
+          </button>
+        </div>
+        <!-- 편의상 style 태그를 아래쪽에 위치시킴@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+        <style>
+          #search > form {
+            display: inline-flex;
+            width: 708px;
+            height: 60px;
+            border: 1px solid #03c75a;
+            border-radius: 33px;
+            text-align: center;
+          }
+          #search > form > input {
+            width: 480px;
+            height: 100%;
+            padding: 17px 0;
+            border: none;
+            outline: none;
+            font-size: 1.6rem;
+            line-height: 24px;
+            font-weight: bold;
+            /* 임의로 왼쪽 여백 줌 */
+            margin-left: 55px;
+          }
+          #search-right {
+            display: inline-block;
+            border: none;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+          }
+          #search-keyboard,
+          #search-recent,
+          #search-button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+          }
+          #search-keyboard::before {
+            content: '';
+            display: inline-block;
+            background-image: url(https://pm.pstatic.net/resources/asset/sp_main.2b96eea2.png);
+            background-size: 434px 414px;
+            background-position: -226px -254px;
+            background-repeat: no-repeat;
+            width: 24px;
+            height: 14px;
+          }
+          #search-recent::before {
+            content: '';
+            display: inline-block;
+            background-image: url(https://pm.pstatic.net/resources/asset/sp_main.2b96eea2.png);
+            background-size: 434px 414px;
+            background-position: -133px -200px;
+            background-repeat: no-repeat;
+            width: 10px;
+            height: 10px;
+          }
+          #search-button::before {
+            content: '';
+            display: inline-block;
+            background-image: url(https://pm.pstatic.net/resources/asset/sp_main.2b96eea2.png);
+            background-size: 434px 414px;
+            background-position: -295px -329px;
+            background-repeat: no-repeat;
+            width: 25px;
+            height: 25px;
+          }
+        </style>
+        <!-- style태그 막줄@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+        <div id="search">
+          <form action="">
+            <label for="search-input" class="blind">검색어 입력</label>
+            <input id="search-input" type="text" placeholder="검색어를 입력하세요." />
+            <div id="search-right">
+              <button href="#" id="search-keyboard">
+                <span class="blind">입력도구</span>
+              </button>
+              <button href="#" id="search-recent">
+                <span class="blind">자동완성/최근검색어펼치기</span>
+              </button>
+              <button href="#" id="search-button">
+                <span class="blind">검색</span>
+              </button>
+            </div>
+          </form>
+        </div>
+        <div id="nav"></div>
+        <div id="main"></div>
+      </div>
+    </div>
+  </body>
+</html>
